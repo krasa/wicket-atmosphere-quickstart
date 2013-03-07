@@ -21,6 +21,7 @@ import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
 import org.apache.wicket.atmosphere.EventBus;
 import org.apache.wicket.atmosphere.Subscribe;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
@@ -28,6 +29,7 @@ public class SecondPage extends WebPage {
 	private static final long serialVersionUID = 1L;
 
 	protected final Form<Void> form;
+	protected final Label label;
 
 	public SecondPage(final PageParameters parameters) {
 		super(parameters);
@@ -38,18 +40,26 @@ public class SecondPage extends WebPage {
 
 			@Override
 			protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
-				EventBus.get().post("hkj");
+				EventBus.get().post("foo");
 			}
 
 			@Override
 			protected void onError(AjaxRequestTarget target, Form<?> form) {
 			}
 		});
+		label = new Label("label");
+
+		form.setOutputMarkupId(true);
+		label.setOutputMarkupId(false);
+		
+		add(label);
 		setVersioned(false);
 	}
 
 	@Subscribe
 	public void receiveMessage(AjaxRequestTarget target, String message) {
+		//
+//		target.add(label);
 		target.add(form);
 	}
 

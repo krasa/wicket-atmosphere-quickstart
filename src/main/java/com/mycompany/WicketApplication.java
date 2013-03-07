@@ -64,18 +64,18 @@ public class WicketApplication extends WebApplication {
 			}
 		});
 
-		ScheduledExecutorService scheduler = Executors
-				.newScheduledThreadPool(1);
-		final Runnable beeper = new Runnable() {
-			@Override
-			public void run() {
-				try {
-					eventBus.post(new Date());
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		};
-		scheduler.scheduleWithFixedDelay(beeper, 2, 2, TimeUnit.SECONDS);
+//		ScheduledExecutorService scheduler = Executors
+//				.newScheduledThreadPool(1);
+//		final Runnable beeper = new Runnable() {
+//			@Override
+//			public void run() {
+//				try {
+//					eventBus.post(new Date());
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		};
+//		scheduler.scheduleWithFixedDelay(beeper, 2, 2, TimeUnit.SECONDS);
 	}
 }

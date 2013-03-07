@@ -42,8 +42,8 @@
 	</licenses>
 	<properties>
 		<wicket.version>6.6.0</wicket.version>
-		<wicket.atmosphere.version>0.7</wicket.atmosphere.version>
-		<atmosphere.version>1.0.8</atmosphere.version>
+		<wicket.atmosphere.version>0.8</wicket.atmosphere.version>
+		<atmosphere.version>1.0.11</atmosphere.version>
 		<jetty.version>8.1.8.v20121106</jetty.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
